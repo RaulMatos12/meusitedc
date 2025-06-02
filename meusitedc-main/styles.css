@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: url('imagens/dc.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  color: white;
+  position: relative;
+  text-align: center;
+  padding-top: 60px; /* só espaço pro botão fixo */
+}
+
+#btn-voltar {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0044cc;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 0 8px #74aaff;
+  transition: background-color 0.3s ease;
+  z-index: 1101;
+  margin: 0;
+}
+
+#btn-voltar:hover {
+  background-color: #002a99;
+}
+
+.conteudo-topo {
+  position: static; /* mudou de fixed para static */
+  max-width: 800px;
+  width: 90%;
+  margin: 15px auto 40px auto; /* espaço entre botão e conteúdo */
+  padding: 15px 30px 20px 30px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 10px 10px;
+  text-align: left;
+  z-index: 1;
+}
+
+.textos-com-fundo {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 12px 20px;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 15px;
+}
+
+.subtitulo {
+  margin: 0 0 5px 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.titulo-principal {
+  margin: 10px 0 0 0;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow:
+    0 0 5px #a0c8ff,
+    0 0 10px #74aaff,
+    0 0 15px #4d90ff,
+    0 0 20px #1e5fff,
+    0 0 30px #0044cc,
+    0 0 40px #003399,
+    0 0 50px #001a66;
+  text-align: center; /* centraliza o título principal */
+}
+
+.titulo-secundario {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-shadow:
+    0 0 5px #ff69b4,
+    0 0 10px #ff69b4,
+    0 0 20px #ff1493,
+    0 0 30px #ff1493;
+  cursor: pointer;
+  user-select: none;
+  text-align: center; /* centraliza o título secundário */
+}
+
+#supergirl-info {
+  margin-top: 15px;
+  color: white;
+  padding: 15px 20px;
+  display: none;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.7); /* fundo escuro para legibilidade */
+  border-radius: 10px;
+  clear: both;
+  overflow-wrap: break-word;
+}
+
+#supergirl-info img {
+  max-width: 30%;
+  float: left;
+  margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px #000;
+}
+
+.nota {
+  font-weight: bold;
+  font-size: 2rem;
+  color: white;
+  text-shadow:
+    0 0 5px #74aaff,
+    0 0 10px #74aaff,
+    0 0 15px #ff69b4,
+    0 0 20px #ff69b4;
+  margin: 10px 0;
+  clear: both;
+}
+
+#supergirl-extra {
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #eee;
+  clear: both;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 50px;
+  }
+
+  #btn-voltar {
+    top: 8px;
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+
+  .conteudo-topo {
+    width: 95%;
+    margin: 10px auto 30px auto;
+    padding: 12px 15px 15px 15px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+  }
+
+  .titulo-principal {
+    font-size: 2rem;
+  }
+
+  .titulo-secundario {
+    font-size: 1.2rem;
+    margin-top: 15px;
+  }
+
+  #supergirl-info {
+    text-align: center;
+    padding: 10px;
+  }
+
+  #supergirl-info img {
+    max-width: 60%;
+    float: none;
+    margin: 0 auto 15px auto;
+    display: block;
+  }
+
+  .nota {
+    font-size: 1.5rem;
+  }
+
+  #supergirl-extra {
+    font-size: 0.9rem;
+  }
+}
