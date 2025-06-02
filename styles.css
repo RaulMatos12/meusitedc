@@ -9,45 +9,64 @@ body {
   color: white;
   position: relative;
   text-align: center;
-  padding-top: 170px; /* espaço para topo fixo */
+  padding-top: 60px; /* só espaço pro botão fixo */
+}
+
+#btn-voltar {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0044cc;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 0 8px #74aaff;
+  transition: background-color 0.3s ease;
+  z-index: 1101;
+  margin: 0;
+}
+
+#btn-voltar:hover {
+  background-color: #002a99;
 }
 
 .conteudo-topo {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 100%;
-  width: 800px; /* largura fixa pro pc, ajuste se quiser */
-  z-index: 1000;
-  padding: 15px 30px 0 30px;
+  position: static; /* mudou de fixed para static */
+  max-width: 800px;
+  width: 90%;
+  margin: 15px auto 40px auto; /* espaço entre botão e conteúdo */
+  padding: 15px 30px 20px 30px;
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 0 0 10px 10px;
-  margin-bottom: 0; /* removido para evitar confusão */
+  text-align: left;
+  z-index: 1;
 }
 
 .textos-com-fundo {
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 15px 20px;
+  padding: 12px 20px;
   border-radius: 0 0 10px 10px;
-  margin-bottom: 20px; /* margem maior para separar do conteúdo */
+  margin-bottom: 15px;
 }
 
 .subtitulo {
   margin: 0 0 5px 0;
   font-weight: 500;
   font-size: 1.2rem;
-}
-
-.conteudo-topo p {
-  margin: 0 0 15px 0;
+  color: #ccc;
 }
 
 .titulo-principal {
-  margin-top: 0;
+  margin: 10px 0 0 0;
   font-size: 3rem;
   font-weight: bold;
+  color: white;
   text-shadow:
     0 0 5px #a0c8ff,
     0 0 10px #74aaff,
@@ -56,12 +75,13 @@ body {
     0 0 30px #0044cc,
     0 0 40px #003399,
     0 0 50px #001a66;
+  text-align: center; /* centraliza o título principal */
 }
 
 .titulo-secundario {
-  margin-top: 15px;
+  margin-top: 20px;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 600;
   color: white;
   text-shadow:
     0 0 5px #ff69b4,
@@ -70,21 +90,27 @@ body {
     0 0 30px #ff1493;
   cursor: pointer;
   user-select: none;
+  text-align: center; /* centraliza o título secundário */
 }
 
 #supergirl-info {
-  margin-top: 20px;
-  text-align: center;
+  margin-top: 15px;
   color: white;
+  padding: 15px 20px;
   display: none;
-  padding: 0 15px;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.7); /* fundo escuro para legibilidade */
+  border-radius: 10px;
+  clear: both;
+  overflow-wrap: break-word;
 }
 
 #supergirl-info img {
-  max-width: 25%;
+  max-width: 30%;
+  float: left;
+  margin-right: 20px;
   border-radius: 10px;
   box-shadow: 1px 1px 5px #000;
-  margin-bottom: 10px;
 }
 
 .nota {
@@ -97,36 +123,37 @@ body {
     0 0 15px #ff69b4,
     0 0 20px #ff69b4;
   margin: 10px 0;
+  clear: both;
 }
 
-/* Fundo com margem maior pra separar visualmente */
 #supergirl-extra {
-  margin-top: 30px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  background-color: rgba(0,0,0,0.6);
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  line-height: 1.4;
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #eee;
+  clear: both;
 }
 
-/* ===== Responsividade ===== */
 @media (max-width: 600px) {
   body {
-    padding-top: 0; /* remove espaço extra no topo para celular */
+    padding-top: 50px;
+  }
+
+  #btn-voltar {
+    top: 8px;
+    padding: 8px 18px;
+    font-size: 0.9rem;
   }
 
   .conteudo-topo {
-    position: static; /* remove fixed no celular para rolar normalmente */
-    transform: none;
-    width: 100%;
-    padding: 15px 15px 0 15px;
-    margin-bottom: 20px;
-    border-radius: 0;
-    background: rgba(0,0,0,0.6);
+    width: 95%;
+    margin: 10px auto 30px auto;
+    padding: 12px 15px 15px 15px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
   }
 
   .titulo-principal {
@@ -135,11 +162,19 @@ body {
 
   .titulo-secundario {
     font-size: 1.2rem;
+    margin-top: 15px;
+  }
+
+  #supergirl-info {
+    text-align: center;
+    padding: 10px;
   }
 
   #supergirl-info img {
     max-width: 60%;
-    margin-bottom: 15px;
+    float: none;
+    margin: 0 auto 15px auto;
+    display: block;
   }
 
   .nota {
@@ -147,13 +182,6 @@ body {
   }
 
   #supergirl-extra {
-    max-width: 100%;
-    padding: 15px;
-    margin-top: 20px;
-    background-color: rgba(0,0,0,0.7);
-  }
-
-  #supergirl-info {
-    padding: 0 15px;
+    font-size: 0.9rem;
   }
 }
